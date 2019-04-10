@@ -38,3 +38,12 @@ export MAC_IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
 # [] means that you can ignore this parameter
 xhost + [$MAC_IP]
 ```
+7. run docker
+```bash
+# the default port of jupyter-notebook webserver is 8888, so $(docker_server_port) can be replaced by 8888, 
+# $(host_port) can be any allow port of your host. Notice that in macOS, $(host_path) should be set in docker
+# software(GUI) first in case of error like permission.
+docker run -it -v $(host_path):$(docker_path) -p $(host_port):$(docker_server_port)  -e DISPLAY=$MAC_IP:0 yfs2018/jupyroot
+```
+8. something to say
+you can visit jupyter-notebook webserver on you host pc by type `localhost:$(host_port)` or `127.0.0.1:$(host_port)` or `$(MAC_IP):$(host_port)`, moreover, visiting the serve by `$(MAC_IP):$(host_port)` on other pc is allowed. By the way, it's necessary to metion that the password of jupyter-server is `data2018`. If you want to save any change of \*.ipynb, please move the file into $(docker_server_port), otherwise all changes will disapper once the docker is closed.
