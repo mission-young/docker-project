@@ -65,7 +65,7 @@ sudo launchctl unload /Library/LaunchDaemons/org.macosforge.xquartz.privileged_s
 sudo rm -rf /opt/X11* /Library/Launch*/org.macosforge.xquartz.* /Applications/Utilities/XQuartz.app /etc/*paths.d/*XQuartz
 sudo pkgutil --forget org.macosforge.xquartz.pkg
 ```
-And then, relogin, reinstall xquartz by homebrew, and relogin again.
+And then, relogin, reinstall xquartz by homebrew, relogin again and check the checkbox `allow connection of webclient`. 
 
 ### port 6000 already in use.
 When try to lauch socat server, error like this appears.
