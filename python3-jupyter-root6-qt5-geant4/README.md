@@ -83,5 +83,8 @@ Once xquartz installed, DISPLAY was set.
 `/private/tmp/com.apple.launchd.xIbRPiCrcx/org.macosforge.xquartz:0`
 Therefore, no need for setting `export DISPLAY=localhost:0.0` in `~/.bash_profile`
 
+### Downloading the image from `hub.docker.com` is toooooo slow, even failed.
+Later, I will reduced image. For now, you can use shadowsocks proxy. I will upload same image to `registry.cn-beijing.aliyuncs.com` soon, you can pull the image from it.
+
 ### How about Linux or Windows?
 Just on the way, Wait a moment.
