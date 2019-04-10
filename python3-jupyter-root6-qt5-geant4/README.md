@@ -82,3 +82,6 @@ Opengl is associated with graph driver. It seems no effective solution for now. 
 Once xquartz installed, DISPLAY was set.
 `/private/tmp/com.apple.launchd.xIbRPiCrcx/org.macosforge.xquartz:0`
 Therefore, no need for setting `export DISPLAY=localhost:0.0` in `~/.bash_profile`
+
+### How about Linux or Windows?
+Just on the way, Wait a moment.
