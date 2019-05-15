@@ -33,10 +33,11 @@ RUN  echo "docker for scientific data analysis " \
     # && pip3 install metakernel jupyter \
 
     && curl -s https://github.com/mission-young/bash_scripts/blob/master/getPartGitProject | bash \
-    && cd pro
-    && make 
-    && rm -rf /opt/root/lib/libPyROOT*
-    && cp libPyROOT* /opt/root/lib/
+    && cd pro \
+    && axel -n 100 https://raw.githubusercontent.com/mission-young/pyroot_link_to_binary/master/Makefile \
+    && make \
+    && rm -rf /opt/root/lib/libPyROOT* \
+    && cp libPyROOT* /opt/root/lib/ \
     && sed -i 's/python2.7/python3.6/g' /opt/root/etc/notebook/kernels/root/kernel.json
 
 
