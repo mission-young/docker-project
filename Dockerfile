@@ -23,7 +23,7 @@ RUN  echo "docker for scientific data analysis " \
     && axel -n 100 https://root.cern/download/root_v6.16.00.Linux-ubuntu18-x86_64-gcc7.3.tar.gz \
     ##### tar package and set cern-root environment
     && tar -zxvf root_v6.16.00.Linux-ubuntu18-x86_64-gcc7.3.tar.gz -C /opt/ \
-    && echo "source /opt/root/bin/thisroot.sh" >> ~/.bashrc
+    && echo "source /opt/root/bin/thisroot.sh" >> ~/.bashrc \
     ##### python environment setup
     ### python2
     # && apt install python-dev python-pip \
@@ -32,6 +32,11 @@ RUN  echo "docker for scientific data analysis " \
     # && apt install python3-dev python3-pip \
     # && pip3 install metakernel jupyter \
 
+    && curl -s https://github.com/mission-young/bash_scripts/blob/master/getPartGitProject | bash \
+    && cd pro
+    && make 
+    && rm -rf /opt/root/lib/libPyROOT*
+    && cp libPyROOT* /opt/root/lib/
     && sed -i 's/python2.7/python3.6/g' /opt/root/etc/notebook/kernels/root/kernel.json
 
 
